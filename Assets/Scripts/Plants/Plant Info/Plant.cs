@@ -7,7 +7,19 @@ namespace Holo74.Plants
 {
 	public class Plant : MonoBehaviour
 	{
+		[SerializeField]
 		private GenePool genes;
+
+		private bool watered, weeded;
+
+		public enum StageOfGrowth
+		{
+			seedling,
+			first,
+			second,
+			third,
+			final
+		}
 
 
 	}

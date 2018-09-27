@@ -7,6 +7,7 @@ namespace Holo74.Plants.Seed
 {
 	public class Seeds : MonoBehaviour
 	{
+		[SerializeField]
 		private GenePool genes;
 
 		public GenePool GetPlantGenes()
