@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priority: 10
   frequency: 0
+  growthTime: 30
   statusEffect: 1
