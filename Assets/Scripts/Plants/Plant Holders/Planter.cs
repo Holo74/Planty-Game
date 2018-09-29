@@ -14,16 +14,20 @@ namespace Holo74.Plants.Planter
 		[SerializeField]
 		private GameObject plantPrefab;
 
-		public void PlantPlant(GenePool seedling, int box)
+		public bool PlantPlant(GenePool seedling, int box)
 		{
-			if(plants[box] != null)
+			bool canPlant = false;
+			if(plants[box] == null && (box == 1 || box == 0))
 			{
+				canPlant = true;
 				plants[box] = Instantiate(plantPrefab, planterBoxes[box].transform).GetComponent<Plant>();
 				foreach (Gene entity in seedling.GetAllGenes())
 				{
 					plants[box].GetGenes().ModifyGenes(entity);
 				}
+				plants[box].PlantGrewUp(RandomGrowthSpread);
 			}
+			return canPlant;
 		}
 
 		private void RandomGrowthSpread(Plant thisPlant)
