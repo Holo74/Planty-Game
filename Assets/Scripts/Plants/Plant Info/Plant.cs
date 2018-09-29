@@ -1,6 +1,4 @@
 ﻿using Holo74.Plants.Genes;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Holo74.Plants
@@ -8,13 +6,13 @@ namespace Holo74.Plants
 	public class Plant : MonoBehaviour
 	{
 		[SerializeField]
-		private GenePool genes;
+		private GenePool genes = new GenePool();
 
 		private bool watered, weeded;
 
 		private float delta;
 
-		public delegate void PlantGrown();
+		public delegate void PlantGrown(Plant plant);
 		private PlantGrown PlantGrew;
 
 		public enum StageOfGrowth
@@ -27,9 +25,14 @@ namespace Holo74.Plants
 		}
 		private StageOfGrowth currentGrowth = StageOfGrowth.seedling;
 
+		public Plant(Gene startGene)
+		{
+			genes.ModifyGenes(startGene);
+		}
+
 		private void Update()
 		{
-			if(genes != null)
+			if(genes.GetAllGenes().Count > 0)
 			{
 				if (delta > genes.GrowthTime())
 				{
@@ -69,7 +72,7 @@ namespace Holo74.Plants
 				default:
 					break;
 			}
-			PlantGrew?.Invoke(); //Only runs if plant grew is not null
+			PlantGrew?.Invoke(this); //Only runs if plant grew is not null
 		}
 
 		[ContextMenu("Water Plant")]
@@ -100,6 +103,11 @@ namespace Holo74.Plants
 		public void PlantGrewUp(PlantGrown function)
 		{
 			PlantGrew = function;
+		}
+
+		public GenePool GetGenes()
+		{
+			return genes;
 		}
 	}
 

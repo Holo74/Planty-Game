@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ee9f448f277874e8020b2154175a05, type: 3}
+  m_Name: Better Health
+  m_EditorClassIdentifier: 
+  first: {fileID: 11400000, guid: bbc2010be3064734cbb672263ca51004, type: 2}
+  second: {fileID: 11400000, guid: bbc2010be3064734cbb672263ca51004, type: 2}
+  outcome: {fileID: 11400000, guid: d57e8a3702e857a4a967f5a9771c96bd, type: 2}

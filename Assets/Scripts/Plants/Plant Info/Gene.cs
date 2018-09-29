@@ -34,6 +34,11 @@ namespace Holo74.Plants.Genes
 			return flowerSprite;
 		}
 
+		public int GetFrequency()
+		{
+			return frequency;
+		}
+
 		public abstract void Effect();
 		public abstract void Effect(Gene geneModifier);
 	}

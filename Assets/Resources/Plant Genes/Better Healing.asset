@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 866a3f5db2c8ca047ad8e9f03dabb251, type: 3}
-  m_Name: Healing
+  m_Name: Better Healing
   m_EditorClassIdentifier: 
   priority: 10
-  frequency: 100
-  growthTime: 30
+  frequency: 60
+  growthTime: 10
   flowerSprite: {fileID: 0}
   statusEffect: 1

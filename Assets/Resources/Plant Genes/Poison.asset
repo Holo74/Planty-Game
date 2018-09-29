@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Poison
   m_EditorClassIdentifier: 
   priority: 0
-  frequency: 0
+  frequency: 100
   growthTime: -10
+  flowerSprite: {fileID: 0}
   statusEffect: 0
