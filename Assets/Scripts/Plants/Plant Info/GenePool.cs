@@ -47,7 +47,7 @@ namespace Holo74.Plants.Genes
 
 		public Gene GetRandomGene(int random)
 		{
-			if(totalGenes[1] != null)
+			if(totalGenes.Count > 1)
 			{
 				if(random % 2 == 0)
 				{
@@ -64,9 +64,33 @@ namespace Holo74.Plants.Genes
 			}
 		}
 
-		public void ModifyGenes(Gene Modifier)
+		public void ModifyGenes(Gene Modifier, SpriteRenderer primary, SpriteRenderer secondary)
 		{
 			if(totalGenes.Count == 1)
+			{
+				bool canCombine = false;
+				Gene possibleCombination = null;
+				(canCombine, possibleCombination) = GeneFunctionManager.FindCombineGenes(totalGenes[0], Modifier);
+				if (canCombine)
+				{
+					totalGenes[0] = possibleCombination;
+					primary.sprite = totalGenes[0].GetFlowerSprite();
+				}
+				else
+				{
+					totalGenes.Add(Modifier);
+					secondary.sprite = totalGenes[1].GetFlowerSprite();
+				}
+			}
+			if(totalGenes.Count == 0)
+			{
+				totalGenes.Add(Modifier);
+			}
+		}
+
+		public void ModifyGenes(Gene Modifier)
+		{
+			if (totalGenes.Count == 1)
 			{
 				bool canCombine = false;
 				Gene possibleCombination = null;
@@ -80,7 +104,7 @@ namespace Holo74.Plants.Genes
 					totalGenes.Add(Modifier);
 				}
 			}
-			if(totalGenes.Count == 0)
+			if (totalGenes.Count == 0)
 			{
 				totalGenes.Add(Modifier);
 			}

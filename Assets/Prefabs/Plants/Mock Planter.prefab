@@ -1,9 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3526529754779750704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5692593130596228172, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
+  m_PrefabInstance: {fileID: 9219122879738301820}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3526529754779750707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
   m_PrefabInstance: {fileID: 9219122879738301820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3909007497324525570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5692593130596228172, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
+  m_PrefabInstance: {fileID: 8736898413080716366}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &3909007497324525569 stripped
 Transform:
@@ -136,9 +146,9 @@ MonoBehaviour:
   - {fileID: 0}
   planterBoxes:
   - {fileID: 5326077786769655358}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3909007497324525570}
+  - {fileID: 3526529754779750704}
+  - {fileID: 8880697670712900633}
   plantPrefab: {fileID: 2620562786437375632, guid: cc7f31cce4953f742997f976490bf513, type: 3}
 --- !u!114 &6092505850324652794
 MonoBehaviour:
@@ -155,6 +165,12 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 2048
+  mainBox: -1
+--- !u!1 &8880697670712900633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5692593130596228172, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
+  m_PrefabInstance: {fileID: 3764644458600030293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8880697670712900634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
@@ -167,54 +183,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5326077787099252188}
     m_Modifications:
-    - target: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692593130596228175, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692593130596228172, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: m_Name
-      value: Planter Box 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1597007120516010998, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
       propertyPath: canSelect
       value: 1
@@ -337,10 +305,6 @@ PrefabInstance:
     - target: {fileID: 1597007120516010998, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
       propertyPath: box
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1597007120516010998, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}
-      propertyPath: canSelect
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d15ebc2e0688814babf8b74d5a0f11b, type: 3}

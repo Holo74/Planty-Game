@@ -13,7 +13,9 @@ namespace Holo74.Plants.Genes
 		[SerializeField, Range(-60, 60)]
 		private float growthTime;
 		[SerializeField]
-		private Sprite flowerSprite;
+		private Sprite flowerSprite, seedSprite;
+		[SerializeField]
+		private Texture2D seedCursor;
 
 		public enum StatusEffect
 		{
@@ -32,6 +34,16 @@ namespace Holo74.Plants.Genes
 		public Sprite GetFlowerSprite()
 		{
 			return flowerSprite;
+		}
+
+		public Sprite GetSeedSprite()
+		{
+			return seedSprite;
+		}
+
+		public Texture2D GetSeedCursor()
+		{
+			return seedCursor;
 		}
 
 		public int GetFrequency()

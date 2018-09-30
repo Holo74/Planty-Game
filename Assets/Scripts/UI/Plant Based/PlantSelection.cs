@@ -47,6 +47,7 @@ namespace Holo74.Hud
 						}
 						else
 						{
+							mainSelection.mainBox = -1;
 							spriteSelection.sprite = hoverSpriteCantSelect;
 						}
 						hoverLock = false;

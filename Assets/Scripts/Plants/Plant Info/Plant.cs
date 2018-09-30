@@ -15,6 +15,19 @@ namespace Holo74.Plants
 		public delegate void PlantGrown(Plant plant);
 		private PlantGrown PlantGrew;
 
+		[SerializeField]
+		private SpriteRenderer flowerSpriteMain, flowerSpriteSub;
+
+		public SpriteRenderer GetMainRender()
+		{
+			return flowerSpriteMain;
+		}
+
+		public SpriteRenderer GetSubRender()
+		{
+			return flowerSpriteSub;
+		}
+
 		public enum StageOfGrowth
 		{
 			seedling,
@@ -27,7 +40,7 @@ namespace Holo74.Plants
 
 		public Plant(Gene startGene)
 		{
-			genes.ModifyGenes(startGene);
+			genes.ModifyGenes(startGene, flowerSpriteMain, flowerSpriteSub);
 		}
 
 		private void Update()
@@ -49,6 +62,7 @@ namespace Holo74.Plants
 		[ContextMenu("Grow Up")]
 		private void GrowingUp()
 		{
+			Debug.Log("Growing up");
 			switch (currentGrowth)
 			{
 				case StageOfGrowth.seedling:

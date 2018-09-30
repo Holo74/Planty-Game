@@ -15,5 +15,5 @@ MonoBehaviour:
   priority: 0
   frequency: 100
   growthTime: -10
-  flowerSprite: {fileID: 0}
+  flowerSprite: {fileID: 21300000, guid: b5fa323afab0b294fa90a91d1fdf9974, type: 3}
   statusEffect: 0

@@ -23,7 +23,7 @@ namespace Holo74.Plants.Planter
 				plants[box] = Instantiate(plantPrefab, planterBoxes[box].transform).GetComponent<Plant>();
 				foreach (Gene entity in seedling.GetAllGenes())
 				{
-					plants[box].GetGenes().ModifyGenes(entity);
+					plants[box].GetGenes().ModifyGenes(entity, plants[box].GetMainRender(), plants[box].GetSubRender());
 				}
 				plants[box].PlantGrewUp(RandomGrowthSpread);
 			}
@@ -52,7 +52,7 @@ namespace Holo74.Plants.Planter
 			{
 				plants[box] = Instantiate(plantPrefab, planterBoxes[box].transform).GetComponent<Plant>();
 			}
-			plants[box].GetGenes().ModifyGenes(parentGenes.GetGenes().GetRandomGene(Random.Range(0, 10)));
+			plants[box].GetGenes().ModifyGenes(parentGenes.GetGenes().GetRandomGene(Random.Range(0, 10)), plants[box].GetMainRender(), plants[box].GetSubRender());
 		}
 	}
 
