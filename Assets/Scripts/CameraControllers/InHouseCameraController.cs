@@ -24,13 +24,13 @@ namespace Holo74.Managers.InputOptions
 			switch (direction)
 			{
 				case Positions.x:
-					goingToPosition.x = Mathf.Clamp(goingToPosition.x + amount, xLowerConstraint, xGreaterConstraint);
+					goingToPosition.x = Mathf.Clamp(goingToPosition.x + amount * movementMod, xLowerConstraint, xGreaterConstraint);
 					break;
 				case Positions.y:
-					goingToPosition.y = Mathf.Clamp(goingToPosition.y + amount, yLowerConstraint, yGreaterConstraint);
+					goingToPosition.y = Mathf.Clamp(goingToPosition.y + amount * movementMod, yLowerConstraint, yGreaterConstraint);
 					break;
 				case Positions.z:
-					goingToPosition.z = Mathf.Clamp(goingToPosition.z + amount, zLowerConstraint, zGreaterConstraint);
+					goingToPosition.z = Mathf.Clamp(goingToPosition.z + amount * movementMod, zLowerConstraint, zGreaterConstraint);
 					break;
 				default:
 					break;
