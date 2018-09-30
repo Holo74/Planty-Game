@@ -15,6 +15,7 @@ namespace Holo74.Hud
 		private LayerMask layer;
 		public int mainBox = -1;
 		private bool activeLock, deactivateLock;
+		private RaycastHit planterBox;
 
 		private void Awake()
 		{
@@ -25,19 +26,23 @@ namespace Holo74.Hud
 			box = GetComponent<Planter>();
 		}
 
-		private void Update()
+		/*private void Update()
 		{
-			if (Physics.Raycast(InputManager.mouseRay, 200f, layer))
+			if (Physics.Raycast(InputManager.mouseRay, out planterBox, 200f, layer))
 			{
-				if (!activeLock)
+				if(planterBox.transform.gameObject == gameObject)
 				{
-					activeLock = true;
-					deactivateLock = false;
-					foreach (PlantSelection entity in plantSelections)
+					if (!activeLock)
 					{
-						entity.ActivateUI();
+						activeLock = true;
+						deactivateLock = false;
+						foreach (PlantSelection entity in plantSelections)
+						{
+							entity.ActivateUI();
+						}
 					}
 				}
+				
 			}
 			else
 			{
@@ -51,6 +56,22 @@ namespace Holo74.Hud
 					}
 				}
 			}
+		}*/
+
+		private void OnMouseOver()
+		{
+			foreach (PlantSelection entity in plantSelections)
+			{
+				entity.ActivateUI();
+			}
+		}
+
+		private void OnMouseExit()
+		{
+			foreach (PlantSelection entity in plantSelections)
+			{
+				entity.DeactivateUI();
+			}
 		}
 
 		public void Interacting()
@@ -62,8 +83,8 @@ namespace Holo74.Hud
 					if (box.PlantPlant(SeedBagManager.Instance().selectedSeed.GetPlantGenes(), mainBox))
 					{
 						SeedBagManager.RemoveSeeds(1);
-						SeedBagManager.Instance().selectedSeed = null;
-						Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+						SeedBagManager.ResetSelectedSeed();
+						plantSelections[mainBox].canSelect = false;
 					}
 				}
 			}

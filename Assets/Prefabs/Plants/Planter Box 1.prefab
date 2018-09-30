@@ -189,7 +189,8 @@ MonoBehaviour:
     m_Bits: 1024
   spriteSelection: {fileID: 7209692038400522798}
   box: 0
-  nonHoverSprite: {fileID: 21300000, guid: a6ce4b512e9c3ab41a7ece9e298e98db, type: 3}
+  nonHoverSpriteCantSelect: {fileID: 21300000, guid: a6ce4b512e9c3ab41a7ece9e298e98db, type: 3}
+  nonHoverSpriteCanSelect: {fileID: 0}
   hoverSpriteCanSelect: {fileID: 21300000, guid: a0890db53ecc9314a8295fb293454562, type: 3}
   hoverSpriteCantSelect: {fileID: 21300000, guid: 0ee403b86274304498f6f89c6819fdf9, type: 3}
   canSelect: 0

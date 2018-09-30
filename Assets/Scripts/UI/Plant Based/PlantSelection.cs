@@ -15,9 +15,8 @@ namespace Holo74.Hud
 		[SerializeField]
 		private int box;
 		[SerializeField]
-		private Sprite nonHoverSprite, hoverSpriteCanSelect, hoverSpriteCantSelect;
-		[SerializeField]
-		private bool canSelect = false;
+		private Sprite nonHoverSpriteCantSelect, nonHoverSpriteCanSelect, hoverSpriteCanSelect, hoverSpriteCantSelect;
+		public bool canSelect = false;
 
 		private void Awake()
 		{
@@ -27,6 +26,33 @@ namespace Holo74.Hud
 		void Update()
 		{
 			DetectingMouse();
+		}
+
+		private void OnMouseEnter()
+		{
+			if (canSelect)
+			{
+				mainSelection.mainBox = box;
+				spriteSelection.sprite = hoverSpriteCanSelect;
+			}
+			else
+			{
+				mainSelection.mainBox = -1;
+				spriteSelection.sprite = hoverSpriteCantSelect;
+			}
+		}
+
+		private void OnMouseExit()
+		{
+			mainSelection.mainBox = -1;
+			if (canSelect)
+			{
+				spriteSelection.sprite = nonHoverSpriteCanSelect;
+			}
+			else
+			{
+				spriteSelection.sprite = nonHoverSpriteCantSelect;
+			}
 		}
 
 		private RaycastHit hit;
@@ -61,7 +87,15 @@ namespace Holo74.Hud
 					hoverLock = true;
 					hoverSpriteLock = false;
 					mainSelection.mainBox = -1;
-					spriteSelection.sprite = nonHoverSprite;
+					if (canSelect)
+					{
+						spriteSelection.sprite = nonHoverSpriteCanSelect;
+					}
+					else
+					{
+						spriteSelection.sprite = nonHoverSpriteCantSelect;
+					}
+					
 				}
 			}
 		}

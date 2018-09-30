@@ -39,6 +39,14 @@ namespace Holo74.Managers
 						interacting.Interacting();
 					}
 				}
+				else
+				{
+					HoldingObjectManager.Instance().EmptyHands();
+				}
+			}
+			if (Input.GetKeyDown(KeyCode.H))
+			{
+				SeedBagManager.AddSeeds(startingSeed);
 			}
 		}
 

@@ -23,6 +23,7 @@ namespace Holo74.Managers
 		[SerializeField]
 		private GameObject bag;
 
+		[HideInInspector]
 		public Seeds selectedSeed;
 		private int selectedSeedPos;
 
@@ -42,6 +43,7 @@ namespace Holo74.Managers
 				seedsAmount[i] = seedsShown[i].transform.GetChild(0).GetComponent<Text>();
 			}
 			UpdateSeeds();
+			selectedSeed = null;
 		}
 
 		public void MoveUpOne()
@@ -85,7 +87,7 @@ namespace Holo74.Managers
 
 		public void SelectingSeed(int selection)
 		{
-			if(seedBag[selection + seedBase] != null)
+			if(seedBag[selection + seedBase] != null && HoldingObjectManager.Instance().GrabingSomething(HoldingObjectManager.ObjectInHands.Seed))
 			{
 				selectedSeed = seedBag[selection + seedBase];
 				Cursor.SetCursor(selectedSeed.GetPlantGenes().GetRandomGene(0).GetSeedCursor(), Vector2.zero, CursorMode.Auto);
@@ -152,6 +154,13 @@ namespace Holo74.Managers
 		{
 			instance.bag.SetActive(true);
 			UpdateSeeds();
+		}
+
+		public static void ResetSelectedSeed()
+		{
+			instance.selectedSeed = null;
+			instance.selectedSeedPos = -1;
+			Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 		}
 	}
 
