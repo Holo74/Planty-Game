@@ -1,0 +1,300 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!4 &267011188593582426 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+  m_PrefabInstance: {fileID: 267011188593458138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &931938888782084046 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+  m_PrefabInstance: {fileID: 931938888782212430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1759249994025181727 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+  m_PrefabInstance: {fileID: 1759249994025318559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5076737885359731993 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+  m_PrefabInstance: {fileID: 5076737885359861657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5331849569429942495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8331431547293728618}
+  m_Layer: 0
+  m_Name: Greenhouse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8331431547293728618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331849569429942495}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.0107374, y: 1.3794227, z: -1.8190851}
+  m_LocalScale: {x: 400, y: 400, z: 400}
+  m_Children:
+  - {fileID: 931938888782084046}
+  - {fileID: 1759249994025181727}
+  - {fileID: 5076737885359731993}
+  - {fileID: 267011188593582426}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &267011188593458138
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8331431547293728618}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.000000004405975
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.010643027
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_Name
+      value: Greenhouse walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6074ea2a8e729d4499f7b50e76bad809, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 43a86f58b207ee141b772c77fd5b303d, type: 3}
+--- !u!1001 &931938888782212430
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8331431547293728618}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_Name
+      value: Greenhouse floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 05cbfa86db2d4cf4c83f4e2432bfc260, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a42e37126eae3d478e128c6bd5d8ac1, type: 3}
+--- !u!1001 &1759249994025318559
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8331431547293728618}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0000000023841857
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01925222
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.000011978149
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_Name
+      value: Greenhouse Glass
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e76633c4033502438910684b05e5463, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e18e87cb95652743a3683b9788c6968, type: 3}
+--- !u!1001 &5076737885359861657
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8331431547293728618}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0000000023841857
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.012592308
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00020666537
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_Name
+      value: Greenhouse Rims
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a966891b12014dd48b3712b69b90df95, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 39a5610a07171ab40801657cf44d22db, type: 3}
