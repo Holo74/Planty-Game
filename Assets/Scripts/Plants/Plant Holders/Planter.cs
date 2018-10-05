@@ -1,9 +1,10 @@
-﻿using Holo74.Plants.Genes;
+﻿using Holo74.Managers;
+using Holo74.Plants.Genes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Holo74.Plants.Planter
+namespace Holo74.Plants.Planters
 {
 	public class Planter : MonoBehaviour
 	{
@@ -21,9 +22,10 @@ namespace Holo74.Plants.Planter
 			{
 				canPlant = true;
 				plants[box] = Instantiate(plantPrefab, planterBoxes[box].transform).GetComponent<Plant>();
+				plants[box].plantMesh = ObjectPool.GetSeedling(planterBoxes[box]);
 				foreach (Gene entity in seedling.GetAllGenes())
 				{
-					plants[box].GetGenes().ModifyGenes(entity, plants[box].GetMainRender(), plants[box].GetSubRender());
+					plants[box].GetGenes().ModifyGenes(entity, plants[box].GetCurrentGrowth());
 				}
 				plants[box].PlantGrewUp(RandomGrowthSpread);
 			}
@@ -52,7 +54,7 @@ namespace Holo74.Plants.Planter
 			{
 				plants[box] = Instantiate(plantPrefab, planterBoxes[box].transform).GetComponent<Plant>();
 			}
-			plants[box].GetGenes().ModifyGenes(parentGenes.GetGenes().GetRandomGene(Random.Range(0, 10)), plants[box].GetMainRender(), plants[box].GetSubRender());
+			plants[box].GetGenes().ModifyGenes(parentGenes.GetGenes().GetRandomGene(Random.Range(0, 10)), plants[box].GetCurrentGrowth());
 		}
 	}
 

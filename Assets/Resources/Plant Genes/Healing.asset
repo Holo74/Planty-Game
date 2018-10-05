@@ -15,7 +15,8 @@ MonoBehaviour:
   priority: 10
   frequency: 100
   growthTime: 30
-  flowerSprite: {fileID: 21300000, guid: 1ac8956aa32c71d4886cb88e2abd198b, type: 3}
+  wateringPeriod: 0
   seedSprite: {fileID: 21300000, guid: 1ac8956aa32c71d4886cb88e2abd198b, type: 3}
   seedCursor: {fileID: 2800000, guid: bf7a0aa92dfbbc04f9c55ba8da40b39c, type: 3}
+  berryColor: {r: 0, g: 0.9680481, b: 1, a: 0}
   statusEffect: 1

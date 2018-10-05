@@ -74,7 +74,7 @@ namespace Holo74.Managers
 			{
 				if(seedBag[i + seedBase] != null)
 				{
-					seedsShown[i].sprite = seedBag[i + seedBase].GetPlantGenes().GetRandomGene(0).GetFlowerSprite();
+					seedsShown[i].sprite = seedBag[i + seedBase].GetPlantGenes().GetRandomGene(0).GetSeedSprite();
 					seedsAmount[i].text = seedBag[i + seedBase].amount.ToString();
 				}
 				else

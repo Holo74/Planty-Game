@@ -16,7 +16,7 @@ namespace Holo74.Plants.Seed
 		{
 			foreach (Gene entity in allGenes)
 			{
-				genes.ModifyGenes(entity);
+				genes.ModifyGenes(entity, Plant.StageOfGrowth.seedling);
 			}
 		}
 

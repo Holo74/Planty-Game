@@ -1,6 +1,6 @@
 ﻿using Holo74.Hud.Interfaces;
 using Holo74.Managers;
-using Holo74.Plants.Planter;
+using Holo74.Plants.Planters;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

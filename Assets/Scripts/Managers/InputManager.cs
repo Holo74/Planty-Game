@@ -11,8 +11,8 @@ namespace Holo74.Managers
 		private static InputManager instance;
 		public static Ray mouseRay;
 		[SerializeField]
-		private Gene[] startingGene;
-		private Seeds startingSeed;
+		private Gene[] startingGene, startingGene2;
+		private Seeds startingSeed, startingSeed2;
 		[SerializeField]
 		private LayerMask canSelect;
 		private RaycastHit selection;
@@ -22,6 +22,7 @@ namespace Holo74.Managers
 		{
 			instance = this;
 			startingSeed = new Seeds(startingGene);
+			startingSeed2 = new Seeds(startingGene2);
 			inHouseCamera = GetComponent<InHouseCameraController>();
 		}
 
@@ -47,6 +48,10 @@ namespace Holo74.Managers
 			if (Input.GetKeyDown(KeyCode.H))
 			{
 				SeedBagManager.AddSeeds(startingSeed);
+			}
+			if (Input.GetKeyDown(KeyCode.G))
+			{
+				SeedBagManager.AddSeeds(startingSeed2);
 			}
 		}
 

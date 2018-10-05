@@ -1,4 +1,5 @@
-﻿using Holo74.Plants.Genes;
+﻿using Holo74.Managers;
+using Holo74.Plants.Genes;
 using UnityEngine;
 
 namespace Holo74.Plants
@@ -10,37 +11,31 @@ namespace Holo74.Plants
 
 		private bool watered, weeded;
 
-		private float delta;
+		private float delta, plantWaterLevel;
 
 		public delegate void PlantGrown(Plant plant);
 		private PlantGrown PlantGrew;
+		public GameObject plantMesh;
 
-		[SerializeField]
-		private SpriteRenderer flowerSpriteMain, flowerSpriteSub;
 
-		public SpriteRenderer GetMainRender()
-		{
-			return flowerSpriteMain;
-		}
-
-		public SpriteRenderer GetSubRender()
-		{
-			return flowerSpriteSub;
-		}
 
 		public enum StageOfGrowth
 		{
 			seedling,
 			first,
 			second,
-			third,
 			final
 		}
 		private StageOfGrowth currentGrowth = StageOfGrowth.seedling;
 
+		public StageOfGrowth GetCurrentGrowth()
+		{
+			return currentGrowth;
+		}
+
 		public Plant(Gene startGene)
 		{
-			genes.ModifyGenes(startGene, flowerSpriteMain, flowerSpriteSub);
+			genes.ModifyGenes(startGene, currentGrowth);
 		}
 
 		private void Update()
@@ -50,15 +45,21 @@ namespace Holo74.Plants
 				if (delta > genes.GrowthTime())
 				{
 					delta = 0;
-					if (watered && weeded)
+					if (watered)
 					{
 						GrowingUp();
 					}
 				}
-				delta += Time.deltaTime;
+				AddTime(Time.deltaTime);
 			}
 		}
 		
+		private void AddTime(float _time)
+		{
+			plantWaterLevel += _time;
+			delta += _time;
+		}
+
 		[ContextMenu("Grow Up")]
 		private void GrowingUp()
 		{
@@ -67,19 +68,20 @@ namespace Holo74.Plants
 			{
 				case StageOfGrowth.seedling:
 					currentGrowth = StageOfGrowth.first;
-					ImageScaling(.2f);
+					ObjectPool.Recycle(plantMesh, StageOfGrowth.seedling);
+					plantMesh = ObjectPool.GetFirstStage(transform.parent.gameObject);
 					break;
 				case StageOfGrowth.first:
 					currentGrowth = StageOfGrowth.second;
-					ImageScaling(.4f);
+					ObjectPool.Recycle(plantMesh, StageOfGrowth.first);
+					plantMesh = ObjectPool.GetSecondStage(transform.parent.gameObject);
+					ChangingBerryColors();
 					break;
 				case StageOfGrowth.second:
-					currentGrowth = StageOfGrowth.third;
-					ImageScaling(.7f);
-					break;
-				case StageOfGrowth.third:
 					currentGrowth = StageOfGrowth.final;
-					ImageScaling(1f);
+					ObjectPool.Recycle(plantMesh, StageOfGrowth.second);
+					plantMesh = ObjectPool.GetThirdStage(transform.parent.gameObject);
+					ChangingBerryColors();
 					break;
 				case StageOfGrowth.final:
 					break;
@@ -87,6 +89,21 @@ namespace Holo74.Plants
 					break;
 			}
 			PlantGrew?.Invoke(this); //Only runs if plant grew is not null
+		}
+
+		private void ChangingBerryColors()
+		{
+			if(plantMesh.transform.GetChild(2).childCount == 0)
+			{
+				plantMesh.transform.GetChild(2).GetComponent<MeshRenderer>().material.color = genes.GetDominateGene().GetBerryColor();
+			}
+			else
+			{
+				for (int i = 0; i < plantMesh.transform.GetChild(2).childCount; i++)
+				{
+					plantMesh.transform.GetChild(2).GetChild(i).GetComponent<MeshRenderer>().material.color = genes.GetDominateGene().GetBerryColor();
+				}
+			}
 		}
 
 		[ContextMenu("Water Plant")]
@@ -108,12 +125,6 @@ namespace Holo74.Plants
 			WeedPlant();
 		}
 
-		private void ImageScaling(float _scale)
-		{
-			Vector3 scale = Vector3.one * _scale;
-			transform.localScale = scale;
-		}
-
 		public void PlantGrewUp(PlantGrown function)
 		{
 			PlantGrew = function;
@@ -122,6 +133,12 @@ namespace Holo74.Plants
 		public GenePool GetGenes()
 		{
 			return genes;
+		}
+
+		public float GetWaterLevel()
+		{
+			float returnValue = Mathf.Clamp(plantWaterLevel / genes.GetWaterNeed(), 0f, 1f);
+			return returnValue;
 		}
 	}
 

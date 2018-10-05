@@ -11,38 +11,82 @@ namespace Holo74.Plants.Genes
 	{
 		[SerializeField]
 		private List<Gene> totalGenes = new List<Gene>();
-		private float growthTime = 200f;
+		private Gene dominateGene;
+		private float growthTime = 200f, waterNeed = 0;
 		private int totalFrequency = -1;
+		[SerializeField]
+		private float minGrowthTime = 10f, minWaterTime = 10f;
+
+		private void CalculateGrowthTime()
+		{
+			growthTime = 0;
+			foreach (Gene gene in totalGenes)
+			{
+				growthTime += gene.GetGrowthTime();
+			}
+			growthTime = (growthTime < minGrowthTime) ? minGrowthTime : growthTime;
+		}
+
+		private void CalculateTotalFrequency()
+		{
+			totalFrequency = 0;
+			foreach (Gene gene in totalGenes)
+			{
+				totalFrequency += gene.GetFrequency();
+			}
+		}
+
+		private void CalculateTotalWaterNeed()
+		{
+			waterNeed = 0;
+			foreach (Gene entity in totalGenes)
+			{
+				waterNeed += entity.GetWaterPeriod();
+			}
+			waterNeed = (waterNeed < minWaterTime) ? minWaterTime : waterNeed;
+		}
+
+		private void CalculatingDominateGene()
+		{
+			float geneStrength = 0;
+			int selectedGene = 0;
+			if(totalGenes.Count > 1)
+			{
+				for (int i = 0; i < totalGenes.Count; i++)
+				{
+					if(totalGenes[i].GetPriority() > geneStrength)
+					{
+						geneStrength = totalGenes[i].GetPriority();
+						selectedGene = i;
+					}
+				}
+			}
+			dominateGene = totalGenes[selectedGene];
+		}
 
 		public float GrowthTime()
 		{
-			if(growthTime == 200f)
-			{
-				growthTime = 0;
-				foreach (Gene gene in totalGenes)
-				{
-					growthTime += gene.GetGrowthTime();
-				}
-			}
 			return growthTime;
 		}
 
 		public int TotalFrequency()
 		{
-			if(totalFrequency == -1)
-			{
-				totalFrequency = 0;
-				foreach (Gene gene in totalGenes)
-				{
-					totalFrequency += gene.GetFrequency();
-				}
-			}
 			return totalFrequency;
+		}
+
+		public float GetWaterNeed()
+		{
+			return waterNeed;
 		}
 
 		public List<Gene> GetAllGenes()
 		{
 			return totalGenes;
+		}
+
+		public Gene GetDominateGene()
+		{
+			return dominateGene;
 		}
 
 		public Gene GetRandomGene(int random)
@@ -64,49 +108,32 @@ namespace Holo74.Plants.Genes
 			}
 		}
 
-		public void ModifyGenes(Gene Modifier, SpriteRenderer primary, SpriteRenderer secondary)
+		public void ModifyGenes(Gene Modifier, Plant.StageOfGrowth growth)
 		{
-			if(totalGenes.Count == 1)
+			if(growth == Plant.StageOfGrowth.seedling)
 			{
-				bool canCombine = false;
-				Gene possibleCombination = null;
-				(canCombine, possibleCombination) = GeneFunctionManager.FindCombineGenes(totalGenes[0], Modifier);
-				if (canCombine)
+				if (totalGenes.Count == 1)
 				{
-					totalGenes[0] = possibleCombination;
-					primary.sprite = totalGenes[0].GetFlowerSprite();
+					bool canCombine = false;
+					Gene possibleCombination = null;
+					(canCombine, possibleCombination) = GeneFunctionManager.FindCombineGenes(totalGenes[0], Modifier);
+					if (canCombine)
+					{
+						totalGenes[0] = possibleCombination;
+					}
+					else
+					{
+						totalGenes.Add(Modifier);
+					}
 				}
-				else
-				{
-					totalGenes.Add(Modifier);
-					secondary.sprite = totalGenes[1].GetFlowerSprite();
-				}
-			}
-			if(totalGenes.Count == 0)
-			{
-				totalGenes.Add(Modifier);
-			}
-		}
-
-		public void ModifyGenes(Gene Modifier)
-		{
-			if (totalGenes.Count == 1)
-			{
-				bool canCombine = false;
-				Gene possibleCombination = null;
-				(canCombine, possibleCombination) = GeneFunctionManager.FindCombineGenes(totalGenes[0], Modifier);
-				if (canCombine)
-				{
-					totalGenes[0] = possibleCombination;
-				}
-				else
+				if (totalGenes.Count == 0)
 				{
 					totalGenes.Add(Modifier);
 				}
-			}
-			if (totalGenes.Count == 0)
-			{
-				totalGenes.Add(Modifier);
+				CalculateGrowthTime();
+				CalculateTotalFrequency();
+				CalculateTotalWaterNeed();
+				CalculatingDominateGene();
 			}
 		}
 	}

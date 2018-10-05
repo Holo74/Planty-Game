@@ -11,11 +11,18 @@ namespace Holo74.Plants.Genes
 		[SerializeField, Range(0, 100)]
 		private int frequency;
 		[SerializeField, Range(-60, 60)]
-		private float growthTime;
+		private float growthTime, wateringPeriod;
 		[SerializeField]
-		private Sprite flowerSprite, seedSprite;
+		private Sprite seedSprite;
 		[SerializeField]
 		private Texture2D seedCursor;
+		[SerializeField]
+		private Color berryColor;
+
+		public Color GetBerryColor()
+		{
+			return berryColor;
+		}
 
 		public enum StatusEffect
 		{
@@ -31,11 +38,6 @@ namespace Holo74.Plants.Genes
 			return growthTime;
 		}
 
-		public Sprite GetFlowerSprite()
-		{
-			return flowerSprite;
-		}
-
 		public Sprite GetSeedSprite()
 		{
 			return seedSprite;
@@ -49,6 +51,16 @@ namespace Holo74.Plants.Genes
 		public int GetFrequency()
 		{
 			return frequency;
+		}
+
+		public float GetWaterPeriod()
+		{
+			return wateringPeriod;
+		}
+
+		public float GetPriority()
+		{
+			return priority;
 		}
 
 		public abstract void Effect();
